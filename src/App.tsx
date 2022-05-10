@@ -1,17 +1,17 @@
+import { useAccount } from "hooks/useAccount";
 import { useConnection } from "hooks/useConnection";
-import {
-  EthyleneInjectedConnector,
-  EthyleneWalletConnectConnector,
-} from "utils/connectors";
 
 function App() {
-  const { connectWallet } = useConnection();
-
-  const connector = EthyleneWalletConnectConnector;
+  const { connect, disconnect } = useConnection();
+  const { auth } = useAccount();
 
   return (
     <div>
-      <button onClick={() => connectWallet(connector)}>connect</button>
+      <button onClick={() => connect()}>
+        {" "}
+        {auth ? "Connected" : "Connect"}{" "}
+      </button>
+      {auth && <button onClick={disconnect}>Disconnect</button>}
     </div>
   );
 }

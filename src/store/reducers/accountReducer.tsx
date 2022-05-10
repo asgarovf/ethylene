@@ -1,14 +1,15 @@
+import { JsonRpcSigner } from "@ethersproject/providers";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: {
   auth: boolean;
   provider: any; //TODO: any ?
-  account: string | undefined;
-  signer: string | undefined;
+  address: string | undefined;
+  signer: JsonRpcSigner | undefined;
 } = {
   auth: false,
   provider: undefined,
-  account: undefined,
+  address: undefined,
   signer: undefined,
 };
 
@@ -22,16 +23,19 @@ export const accountSlice = createSlice({
     setProvider: (state, action: PayloadAction<any>) => {
       state.provider = action.payload;
     },
-    setAccount: (state, action: PayloadAction<string>) => {
-      state.account = action.payload;
+    setAddress: (state, action: PayloadAction<string>) => {
+      state.address = action.payload;
     },
-    setSigner: (state, action: PayloadAction<string>) => {
+    setSigner: (state, action: PayloadAction<JsonRpcSigner>) => {
       state.signer = action.payload;
+    },
+    disconnectWallet: (state) => {
+      return initialState;
     },
   },
 });
 
-export const { setAccount, setAuth, setProvider, setSigner } =
+export const { setAddress, setAuth, setProvider, setSigner, disconnectWallet } =
   accountSlice.actions;
 
 export default accountSlice.reducer;

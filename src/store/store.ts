@@ -8,6 +8,12 @@ export const store = configureStore({
     walletConnection: walletConnectionSlice,
     account: accountReducer,
   },
+  middleware: (getDefaultMiddleware) => {
+    const customizedMiddleware = getDefaultMiddleware({
+      serializableCheck: false,
+    });
+    return customizedMiddleware;
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

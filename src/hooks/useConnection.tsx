@@ -1,42 +1,77 @@
 import { ethers } from "ethers";
 import { batch, useDispatch } from "react-redux";
 import {
-  setIsConnecting,
-  setisConnectionFailed,
-} from "store/reducers/walletConnectionReducer";
+  disconnectWallet,
+  setAddress,
+  setAuth,
+  setSigner,
+} from "store/reducers/accountReducer";
+import { setIsConnecting } from "store/reducers/walletConnectionReducer";
 import { useTypedSelector } from "store/store";
 import { EthyleneConnector } from "types/app";
+import { EthyleneInjectedConnector } from "utils/connectors";
+import { isProd } from "utils/isProd";
+
+const defaultConnector = EthyleneInjectedConnector;
 
 export const useConnection = () => {
   const { isConnecting, isConnectionFailed, providerName } = useTypedSelector(
     (state) => state.walletConnection
   );
   const dispatch = useDispatch();
+  const { auth } = useTypedSelector((state) => state.account);
 
-  const connectWallet = (
-    connector: EthyleneConnector,
-    onError?: (error: any) => void
-  ) => {
-    const appliedProivder = connector.provider;
-    console.log(appliedProivder);
+  const connect = async ({
+    connector,
+    onError,
+    onMetamaskError,
+  }: {
+    connector?: EthyleneConnector;
+    onError?: (err: Error) => void;
+    onMetamaskError?: () => void;
+  } = {}) => {
+    if (auth) return;
 
-    const provider = new ethers.providers.Web3Provider(appliedProivder, "any");
+    let mainConnector = connector ?? defaultConnector;
 
-    console.log(provider);
+    if (!mainConnector.provider) {
+      onMetamaskError?.();
+      return;
+    }
+
+    const appliedProvider = mainConnector.provider;
+    const provider = new ethers.providers.Web3Provider(appliedProvider, "any");
 
     try {
+      dispatch(setIsConnecting(true));
+      await provider.send("eth_requestAccounts", []);
+      const signer = await provider.getSigner();
+      const address = await signer.getAddress();
       batch(() => {
-        dispatch(setIsConnecting(true));
+        dispatch(setSigner(signer));
+        dispatch(setAddress(address));
+        dispatch(setAuth(true));
         dispatch(setIsConnecting(false));
       });
-    } catch (err) {
+    } catch {
       dispatch(setIsConnecting(false));
-      throw new Error("Failed to connect the walled");
+      const error = new Error("Failed to connect the walled");
+      onError?.(error);
+      if (!isProd) {
+        console.error(error);
+        throw error;
+      }
     }
   };
 
+  const disconnect = () => {
+    if (!auth) return;
+    dispatch(disconnectWallet());
+  };
+
   return {
-    connectWallet,
+    connect,
+    disconnect,
     providerName,
     isConnectionFailed,
     isConnecting,

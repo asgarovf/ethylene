@@ -1,3 +1,7 @@
+import { useTypedSelector } from "store/store";
+
 export const useAccount = () => {
-  return null;
+  const { auth } = useTypedSelector((state) => state.account);
+
+  return { auth };
 };
