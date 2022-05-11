@@ -1,10 +1,9 @@
 {
   "name": "ethylene",
-  "version": "0.1.21",
+  "version": "0.1.25",
   "private": false,
   "dependencies": {
     "@reduxjs/toolkit": "1.8.1",
-    "ethers": "5.5.4",
     "react-redux": "8.0.1"
   },
   "scripts": {
