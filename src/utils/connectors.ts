@@ -1,4 +1,4 @@
-import { EthyleneConnector } from "types/app";
+import { EthyleneConnector } from "../types/app";
 
 declare let window: Window & any;
 

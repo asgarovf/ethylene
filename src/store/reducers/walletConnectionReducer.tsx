@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { EthyleneConnectorName } from "types/app";
+import { EthyleneConnectorName } from "../../types/app";
 
 const initialState: {
   providerName: EthyleneConnectorName | undefined;

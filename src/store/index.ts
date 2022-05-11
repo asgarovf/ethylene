@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import accountReducer from "store/reducers/accountReducer";
-import walletConnectionSlice from "store/reducers/walletConnectionReducer";
+import accountReducer from "./reducers/accountReducer";
+import walletConnectionSlice from "./reducers/walletConnectionReducer";
 
 export const store = configureStore({
   reducer: {

@@ -1,5 +1,5 @@
-import { useAccount } from "hooks/useAccount";
-import { useConnection } from "hooks/useConnection";
+import { useAccount } from "./hooks";
+import { useConnection } from "./hooks";
 
 function App() {
   const { connect, disconnect } = useConnection();
@@ -7,6 +7,7 @@ function App() {
 
   return (
     <div>
+      asfafs
       <button onClick={() => connect()}>
         {" "}
         {auth ? "Connected" : "Connect"}{" "}

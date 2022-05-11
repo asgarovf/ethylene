@@ -1,16 +1,16 @@
-import { ethers } from "ethers";
 import { batch, useDispatch } from "react-redux";
 import {
   disconnectWallet,
   setAddress,
   setAuth,
   setSigner,
-} from "store/reducers/accountReducer";
-import { setIsConnecting } from "store/reducers/walletConnectionReducer";
-import { useTypedSelector } from "store/store";
-import { EthyleneConnector } from "types/app";
-import { EthyleneInjectedConnector } from "utils/connectors";
-import { isProd } from "utils/isProd";
+} from "../store/reducers/accountReducer";
+import { setIsConnecting } from "../store/reducers/walletConnectionReducer";
+import { useTypedSelector } from "../store";
+import { EthyleneConnector } from "../types/app";
+import { EthyleneInjectedConnector } from "../utils/connectors";
+import { isProd } from "../utils/isProd";
+import { ethers } from "ethers";
 
 const defaultConnector = EthyleneInjectedConnector;
 
