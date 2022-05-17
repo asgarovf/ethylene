@@ -1,6 +1,6 @@
 {
   "name": "ethylene",
-  "version": "0.1.26",
+  "version": "1.0.0",
   "private": false,
   "dependencies": {
     "@reduxjs/toolkit": "1.8.1",

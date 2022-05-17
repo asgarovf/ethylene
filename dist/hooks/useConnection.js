@@ -42,61 +42,59 @@ import { EthyleneInjectedConnector } from "../utils/connectors";
 import { isProd } from "../utils/isProd";
 import { ethers } from "ethers";
 var defaultConnector = EthyleneInjectedConnector;
-export var useConnection = function () {
-    var _a = useTypedSelector(function (state) { return state.walletConnection; }), isConnecting = _a.isConnecting, isConnectionFailed = _a.isConnectionFailed, providerName = _a.providerName;
+export var useConnection = function (_a) {
+    var _b = _a === void 0 ? {} : _a, connector = _b.connector, onError = _b.onError, onMetamaskError = _b.onMetamaskError;
+    var _c = useTypedSelector(function (state) { return state.walletConnection; }), isConnecting = _c.isConnecting, isConnectionFailed = _c.isConnectionFailed, providerName = _c.providerName;
     var dispatch = useDispatch();
     var auth = useTypedSelector(function (state) { return state.account; }).auth;
-    var connect = function (_a) {
-        var _b = _a === void 0 ? {} : _a, connector = _b.connector, onError = _b.onError, onMetamaskError = _b.onMetamaskError;
-        return __awaiter(void 0, void 0, void 0, function () {
-            var mainConnector, appliedProvider, provider, signer_1, address_1, _c, error;
-            return __generator(this, function (_d) {
-                switch (_d.label) {
-                    case 0:
-                        if (auth)
-                            return [2 /*return*/];
-                        mainConnector = connector !== null && connector !== void 0 ? connector : defaultConnector;
-                        if (!mainConnector.provider) {
-                            onMetamaskError === null || onMetamaskError === void 0 ? void 0 : onMetamaskError();
-                            return [2 /*return*/];
-                        }
-                        appliedProvider = mainConnector.provider;
-                        provider = new ethers.providers.Web3Provider(appliedProvider, "any");
-                        _d.label = 1;
-                    case 1:
-                        _d.trys.push([1, 5, , 6]);
-                        dispatch(setIsConnecting(true));
-                        return [4 /*yield*/, provider.send("eth_requestAccounts", [])];
-                    case 2:
-                        _d.sent();
-                        return [4 /*yield*/, provider.getSigner()];
-                    case 3:
-                        signer_1 = _d.sent();
-                        return [4 /*yield*/, signer_1.getAddress()];
-                    case 4:
-                        address_1 = _d.sent();
-                        batch(function () {
-                            dispatch(setSigner(signer_1));
-                            dispatch(setAddress(address_1));
-                            dispatch(setAuth(true));
-                            dispatch(setIsConnecting(false));
-                        });
-                        return [3 /*break*/, 6];
-                    case 5:
-                        _c = _d.sent();
+    var connect = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var mainConnector, appliedProvider, provider, signer_1, address_1, _a, error;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    if (auth)
+                        return [2 /*return*/];
+                    mainConnector = connector !== null && connector !== void 0 ? connector : defaultConnector;
+                    if (!mainConnector.provider) {
+                        onMetamaskError === null || onMetamaskError === void 0 ? void 0 : onMetamaskError();
+                        return [2 /*return*/];
+                    }
+                    appliedProvider = mainConnector.provider;
+                    provider = new ethers.providers.Web3Provider(appliedProvider, "any");
+                    _b.label = 1;
+                case 1:
+                    _b.trys.push([1, 5, , 6]);
+                    dispatch(setIsConnecting(true));
+                    return [4 /*yield*/, provider.send("eth_requestAccounts", [])];
+                case 2:
+                    _b.sent();
+                    return [4 /*yield*/, provider.getSigner()];
+                case 3:
+                    signer_1 = _b.sent();
+                    return [4 /*yield*/, signer_1.getAddress()];
+                case 4:
+                    address_1 = _b.sent();
+                    batch(function () {
+                        dispatch(setSigner(signer_1));
+                        dispatch(setAddress(address_1));
+                        dispatch(setAuth(true));
                         dispatch(setIsConnecting(false));
-                        error = new Error("Failed to connect the walled");
-                        onError === null || onError === void 0 ? void 0 : onError(error);
-                        if (!isProd) {
-                            console.error(error);
-                            throw error;
-                        }
-                        return [3 /*break*/, 6];
-                    case 6: return [2 /*return*/];
-                }
-            });
+                    });
+                    return [3 /*break*/, 6];
+                case 5:
+                    _a = _b.sent();
+                    dispatch(setIsConnecting(false));
+                    error = new Error("Failed to connect the walled");
+                    onError === null || onError === void 0 ? void 0 : onError(error);
+                    if (!isProd) {
+                        console.error(error);
+                        throw error;
+                    }
+                    return [3 /*break*/, 6];
+                case 6: return [2 /*return*/];
+            }
         });
-    };
+    }); };
     var disconnect = function () {
         if (!auth)
             return;
