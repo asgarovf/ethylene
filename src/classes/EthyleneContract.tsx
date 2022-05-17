@@ -1,0 +1,41 @@
+import { Contract, ContractInterface } from "ethers";
+
+type MethodInterface<T extends string> = {
+  [key in T]: {
+    /**
+     * @dev Execute a function from Smart Contract
+     */
+    execute: (...args: any) => void;
+
+    /**
+     * @dev Execute a function from Smart Contract and wait for the transaction
+     */
+    executeAndWait: (...args: any) => void;
+
+    /**
+     * @dev is the transaction loading
+     */
+    isLoading: boolean;
+
+    /**
+     * @dev is the transaction failed
+     */
+    isFailed: boolean;
+  };
+};
+
+type EthyleneContractConstructorProps = {
+  address: string;
+  abi: ContractInterface;
+  provider: any;
+};
+
+export class EthyleneContract<T extends string> {
+  ethersContract: Contract;
+  methods = {} as MethodInterface<T>;
+
+  constructor({ address, abi, provider }: EthyleneContractConstructorProps) {
+    const contract = new Contract(address, abi, provider);
+    this.ethersContract = contract;
+  }
+}

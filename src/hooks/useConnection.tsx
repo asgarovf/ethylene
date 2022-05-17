@@ -3,6 +3,7 @@ import {
   disconnectWallet,
   setAddress,
   setAuth,
+  setProvider,
   setSigner,
 } from "../store/reducers/accountReducer";
 import { setIsConnecting } from "../store/reducers/walletConnectionReducer";
@@ -49,6 +50,7 @@ export const useConnection = ({
       const address = await signer.getAddress();
       batch(() => {
         dispatch(setSigner(signer));
+        dispatch(setProvider(provider));
         dispatch(setAddress(address));
         dispatch(setAuth(true));
         dispatch(setIsConnecting(false));
