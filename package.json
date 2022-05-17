@@ -1,6 +1,6 @@
 {
   "name": "ethylene",
-  "version": "0.1.25",
+  "version": "1.0.0",
   "private": false,
   "dependencies": {
     "@reduxjs/toolkit": "1.8.1",
@@ -32,6 +32,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "peerDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@types/node": "16.11.33",

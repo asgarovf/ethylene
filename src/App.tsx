@@ -8,10 +8,7 @@ function App() {
   return (
     <div>
       asfafs
-      <button onClick={() => connect()}>
-        {" "}
-        {auth ? "Connected" : "Connect"}{" "}
-      </button>
+      <button onClick={connect}> {auth ? "Connected" : "Connect"} </button>
       {auth && <button onClick={disconnect}>Disconnect</button>}
     </div>
   );

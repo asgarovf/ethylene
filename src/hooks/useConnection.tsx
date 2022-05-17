@@ -14,22 +14,22 @@ import { ethers } from "ethers";
 
 const defaultConnector = EthyleneInjectedConnector;
 
-export const useConnection = () => {
+export const useConnection = ({
+  connector,
+  onError,
+  onMetamaskError,
+}: {
+  connector?: EthyleneConnector;
+  onError?: (err: Error) => void;
+  onMetamaskError?: () => void;
+} = {}) => {
   const { isConnecting, isConnectionFailed, providerName } = useTypedSelector(
     (state) => state.walletConnection
   );
   const dispatch = useDispatch();
   const { auth } = useTypedSelector((state) => state.account);
 
-  const connect = async ({
-    connector,
-    onError,
-    onMetamaskError,
-  }: {
-    connector?: EthyleneConnector;
-    onError?: (err: Error) => void;
-    onMetamaskError?: () => void;
-  } = {}) => {
+  const connect = async () => {
     if (auth) return;
 
     let mainConnector = connector ?? defaultConnector;
