@@ -1,5 +1,13 @@
 import { ERC20 } from "./abi/ERC20";
-import { useAccount, useConnection, useContract } from "./hooks";
+import { AVAX_MAINNET } from "./constants";
+import {
+  useAccount,
+  useConnection,
+  useContract,
+  useRightNetwork,
+  useOnNetworkChange,
+  useOnAccountsChange,
+} from "./hooks";
 
 function App() {
   const { connect, disconnect } = useConnection();
@@ -10,6 +18,14 @@ function App() {
     provider: provider,
   });
 
+  const { isRightNetwork, switchTo } = useRightNetwork(AVAX_MAINNET);
+
+  useOnNetworkChange(() => window.location.reload());
+  useOnAccountsChange(() => window.location.reload(), {
+    deps: [],
+    interval: 1000,
+  });
+
   return (
     <div>
       asfafs
@@ -18,6 +34,7 @@ function App() {
       <button onClick={() => contract?.methods.allowance.executeAndWait()}>
         {contract?.methods.allowance.isLoading ? "Loading" : "Hey"}
       </button>
+      <button onClick={switchTo}>Switch to correct network</button>
     </div>
   );
 }
