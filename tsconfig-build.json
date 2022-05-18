@@ -25,6 +25,6 @@
     "declarationMap": true,
   },
   "include": [
-    "src/hooks", "src/store", "src/types", "src/utils"
+    "src/hooks", "src/store", "src/types", "src/utils", "src/constants"
   ]
 }
