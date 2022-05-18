@@ -20,3 +20,6 @@ npm i ethylene ethers
 ```
 
 You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+
+:::info React version
+We are not supporting the new React 18 release. It is recommended to use previous major React versions.
