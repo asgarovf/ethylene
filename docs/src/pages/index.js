@@ -27,8 +27,26 @@ export default function Home() {
     >
       <HomepageHeader />
       <main>
-        <div style={{ paddingLeft: "12px", marginTop: "2rem" }}>
-          <Link to="/docs/intro">Documentation</Link>
+        <div
+          style={{
+            paddingLeft: "12px",
+            marginTop: "2rem",
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Link to="/docs/intro">
+            <h2>Documentation</h2>
+          </Link>
+          <div style={{ marginTop: "2rem" }}>
+            <h4>
+              The documentation and the library is still experimental. The full
+              publish will be announced!
+            </h4>{" "}
+          </div>
         </div>
       </main>
     </Layout>
