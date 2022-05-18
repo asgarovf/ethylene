@@ -1,18 +1,27 @@
 {
   "name": "ethylene",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "private": false,
   "license": "MIT",
   "author": {
     "name": "Farhad Asgarov",
     "email": "fasgarov2002@gmail.com"
   },
+  "description": "React hooks, utils, and UI components for interacting with Ethereum Smart Contracts",
   "repository": "https://github.com/asgarovf/ethylene",
   "dependencies": {
     "@reduxjs/toolkit": "1.8.1",
     "ethers": "5.6.6",
     "react-redux": "8.0.1"
   },
+  "keywords": [
+    "react",
+    "ethers",
+    "ethereum",
+    "ethylene",
+    "web3",
+    "redux-toolkit"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "test": "react-scripts test",

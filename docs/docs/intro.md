@@ -6,6 +6,8 @@ sidebar_position: 1
 
 **Ethylene** is a React library that is built for supporting Web3 front-end developers. You can start your work in short amount of time and develop your complete dApp without any difficulties.
 
+- [NPM Package](https://www.npmjs.com/package/ethylene)
+
 ## Getting Started
 
 Install the package from [npm](https://www.npmjs.com/package/ethylene).
