@@ -12,7 +12,7 @@ Install the package from [npm](https://www.npmjs.com/package/ethylene).
 
 ```bash
 
-npm i ethylene ethers
+npm i ethylene
 
 ```
 
@@ -21,3 +21,7 @@ You can type this command into Command Prompt, Powershell, Terminal, or any othe
 ## Documentation (In process)
 
 [https://ethylene.vercel.app/docs/intro](https://ethylene.vercel.app/docs/intro)
+
+## Version Note
+
+We are not supporting the new React 18 release. It is recommended to use previous major React versions.

@@ -8,15 +8,16 @@ React hooks, utils, and UI components for interacting with Ethereum Smart Contra
 
 ## Getting Started
 
-### What you'll need
-
-- [Ethers](https://github.com/ethers-io/ethers.js/):
-  - Since the Ethylene is built on top of Ethers, you are required to install during the setup
-
-## Installation
+Install the package from [npm](https://www.npmjs.com/package/ethylene).
 
 ```bash
+
 npm i ethylene ethers
+
 ```
 
 You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+
+## Documentation (In process)
+
+[https://ethylene.vercel.app/docs/intro](https://ethylene.vercel.app/docs/intro)
