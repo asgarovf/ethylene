@@ -35,7 +35,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { batch, useDispatch } from "react-redux";
-import { disconnectWallet, setAddress, setAuth, setSigner, } from "../store/reducers/accountReducer";
+import { disconnectWallet, setAddress, setAuth, setProvider, setSigner, } from "../store/reducers/accountReducer";
 import { setIsConnecting } from "../store/reducers/walletConnectionReducer";
 import { useTypedSelector } from "../store";
 import { EthyleneInjectedConnector } from "../utils/connectors";
@@ -76,6 +76,7 @@ export var useConnection = function (_a) {
                     address_1 = _b.sent();
                     batch(function () {
                         dispatch(setSigner(signer_1));
+                        dispatch(setProvider(provider));
                         dispatch(setAddress(address_1));
                         dispatch(setAuth(true));
                         dispatch(setIsConnecting(false));
