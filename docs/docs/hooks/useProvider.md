@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # useProvider
 
-This hook helps you get Provider information from the state
+This hook helps you get Provider information from the state.
 
 ## Usage
 

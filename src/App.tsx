@@ -1,3 +1,4 @@
+import { Interface } from "ethers/lib/utils";
 import { ERC20 } from "./abi/ERC20";
 import { AVAX_MAINNET } from "./constants";
 import {
@@ -12,9 +13,9 @@ import {
 
 function App() {
   const { connect, disconnect } = useConnection();
-  const { auth, provider } = useAccount();
+  const { auth, provider, address } = useAccount();
   const contract = useContract({
-    address: "0x24124124",
+    address: "0xa9d19d5e8712C1899C4344059FD2D873a3e2697E",
     abi: ERC20,
     provider: provider,
   });
@@ -35,7 +36,15 @@ function App() {
       asfafs
       <button onClick={connect}> {auth ? "Connected" : "Connect"} </button>
       {auth && <button onClick={disconnect}>Disconnect</button>}
-      <button onClick={() => contract?.methods.allowance.executeAndWait()}>
+      <button
+        onClick={async () => {
+          const res = contract?.methods.allowance.execute(
+            address,
+            "0x635fa23B10a2418cC4224BE1EAab46a5E9252892"
+          );
+          console.log(res);
+        }}
+      >
         {contract?.methods.allowance.isLoading ? "Loading" : "Hey"}
       </button>
       <button onClick={switchTo}>Switch to correct network</button>

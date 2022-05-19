@@ -36,6 +36,7 @@ export const useContract = <T extends string>({
     mainAbi = mainAbi.filter((item: any) => item.type === "function");
     for (let i = 0; i < mainAbi.length; i++) {
       const key = mainAbi[i].name;
+
       contract.methods[key] = {
         execute: async function (...args: any) {
           try {

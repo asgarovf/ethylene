@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # useSigner
 
-This hook helps you get Signer information from the state
+This hook helps you get Signer information from the state.
 
 ## Usage
 

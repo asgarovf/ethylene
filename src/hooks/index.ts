@@ -7,3 +7,4 @@ export { useOnAccountsChange } from "../hooks/useOnAccountsChange";
 export { useBalance } from "../hooks/useBalance";
 export { useProvider } from "../hooks/useProvider";
 export { useSigner } from "../hooks/useSigner";
+export { useAuth } from "../hooks/useAuth";
