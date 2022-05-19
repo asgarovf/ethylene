@@ -7,7 +7,7 @@ export declare const store: import("@reduxjs/toolkit").EnhancedStore<{
     };
     account: {
         auth: boolean;
-        provider: any;
+        provider: import("@ethersproject/providers").Web3Provider | undefined;
         address: string | undefined;
         signer: import("@ethersproject/providers").JsonRpcSigner | undefined;
     };
@@ -19,7 +19,7 @@ export declare const store: import("@reduxjs/toolkit").EnhancedStore<{
     };
     account: {
         auth: boolean;
-        provider: any;
+        provider: import("@ethersproject/providers").Web3Provider | undefined;
         address: string | undefined;
         signer: import("@ethersproject/providers").JsonRpcSigner | undefined;
     };
@@ -33,7 +33,7 @@ export declare const useAppDispatch: () => import("@reduxjs/toolkit").ThunkDispa
     };
     account: {
         auth: boolean;
-        provider: any;
+        provider: import("@ethersproject/providers").Web3Provider | undefined;
         address: string | undefined;
         signer: import("@ethersproject/providers").JsonRpcSigner | undefined;
     };

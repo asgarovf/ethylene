@@ -4,4 +4,7 @@ export { useContract } from "../hooks/useContract";
 export { useRightNetwork } from "../hooks/useRightNetwork";
 export { useOnNetworkChange } from "../hooks/useOnNetworkChange";
 export { useOnAccountsChange } from "../hooks/useOnAccountsChange";
+export { useBalance } from "../hooks/useBalance";
+export { useProvider } from "../hooks/useProvider";
+export { useSigner } from "../hooks/useSigner";
 //# sourceMappingURL=index.d.ts.map

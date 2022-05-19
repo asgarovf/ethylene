@@ -1,6 +1,6 @@
 export declare const useAccount: () => {
     auth: boolean;
-    provider: any;
+    provider: import("@ethersproject/providers").Web3Provider | undefined;
     signer: import("@ethersproject/providers").JsonRpcSigner | undefined;
     address: string | undefined;
 };
