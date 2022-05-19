@@ -1,4 +1,5 @@
 import { Contract, ContractInterface } from "ethers";
+import { Web3Provider } from "@ethersproject/providers";
 
 type MethodInterface<T extends string> = {
   [key in T]: {
@@ -27,7 +28,7 @@ type MethodInterface<T extends string> = {
 type EthyleneContractConstructorProps = {
   address: string;
   abi: ContractInterface;
-  provider: any;
+  provider: Web3Provider;
 };
 
 export class EthyleneContract<T extends string> {

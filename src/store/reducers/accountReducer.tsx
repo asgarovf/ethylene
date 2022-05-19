@@ -1,9 +1,9 @@
-import { JsonRpcSigner } from "@ethersproject/providers";
+import { JsonRpcSigner, Web3Provider } from "@ethersproject/providers";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: {
   auth: boolean;
-  provider: any; //TODO: any ?
+  provider: Web3Provider | undefined;
   address: string | undefined;
   signer: JsonRpcSigner | undefined;
 } = {
@@ -20,7 +20,7 @@ export const accountSlice = createSlice({
     setAuth: (state, action: PayloadAction<boolean>) => {
       state.auth = action.payload;
     },
-    setProvider: (state, action: PayloadAction<any>) => {
+    setProvider: (state, action: PayloadAction<Web3Provider>) => {
       state.provider = action.payload;
     },
     setAddress: (state, action: PayloadAction<string>) => {

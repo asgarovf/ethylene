@@ -7,6 +7,7 @@ import {
   useRightNetwork,
   useOnNetworkChange,
   useOnAccountsChange,
+  useBalance,
 } from "./hooks";
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
     deps: [],
     interval: 1000,
   });
+  const { balance, fetchBalance, isFetching, setBalance, error } = useBalance({
+    direct: false,
+  });
 
   return (
     <div>
@@ -35,6 +39,7 @@ function App() {
         {contract?.methods.allowance.isLoading ? "Loading" : "Hey"}
       </button>
       <button onClick={switchTo}>Switch to correct network</button>
+      <button onClick={fetchBalance}>Fetchbalance</button>
     </div>
   );
 }
