@@ -8,4 +8,5 @@ export { useBalance } from "../hooks/useBalance";
 export { useProvider } from "../hooks/useProvider";
 export { useSigner } from "../hooks/useSigner";
 export { useAuth } from "../hooks/useAuth";
+export { useContractFunction } from "../hooks/useContractFunction";
 //# sourceMappingURL=index.d.ts.map

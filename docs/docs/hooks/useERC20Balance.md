@@ -15,7 +15,7 @@ import { useERC20Balance } from "ethylene/hooks";
 
 function App() {
   const {
-    balance: ercBalance,
+    balance,
     fetchBalance,
     isFetching,
     error,
@@ -23,7 +23,7 @@ function App() {
   } = useERC20Balance({
     address: "0xContractAddress",
     onSuccess: (res) => {
-      console.log(res); // **res** is BigNumber here
+      console.log(res); // res is BigNumber here
     },
   });
 
