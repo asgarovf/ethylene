@@ -5,11 +5,11 @@ declare type MethodInterface<T extends string> = {
         /**
          * @dev Execute a function from Smart Contract
          */
-        execute: (...args: any) => void;
+        execute: (...args: any) => Promise<any>;
         /**
          * @dev Execute a function from Smart Contract and wait for the transaction
          */
-        executeAndWait: (...args: any) => void;
+        executeAndWait: (...args: any) => Promise<any>;
         /**
          * @dev is the transaction loading
          */

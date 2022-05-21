@@ -1,1 +1,1 @@
-{"version":3,"file":"useContract.d.ts","sourceRoot":"","sources":["../../src/hooks/useContract.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,QAAQ,CAAC;AAE3C,OAAO,EAAE,gBAAgB,EAAE,MAAM,6BAA6B,CAAC;AAQ/D,eAAO,MAAM,WAAW;aAKb,MAAM;SACV,iBAAiB;cACZ,GAAG;gCAkEd,CAAC"}
+{"version":3,"file":"useContract.d.ts","sourceRoot":"","sources":["../../src/hooks/useContract.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,QAAQ,CAAC;AAE3C,OAAO,EAAE,gBAAgB,EAAE,MAAM,6BAA6B,CAAC;AAQ/D,eAAO,MAAM,WAAW;aAKb,MAAM;SACV,iBAAiB;cACZ,GAAG;gCAmEd,CAAC"}

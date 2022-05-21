@@ -1,4 +1,4 @@
-import { Interface } from "ethers/lib/utils";
+import { BigNumber } from "ethers";
 import { ERC20 } from "./abi/ERC20";
 import { AVAX_MAINNET } from "./constants";
 import {
@@ -9,7 +9,9 @@ import {
   useOnNetworkChange,
   useOnAccountsChange,
   useBalance,
+  useContractFunction,
 } from "./hooks";
+import { useERC20Balance } from "./hooks/useERC20Balance";
 
 function App() {
   const { connect, disconnect } = useConnection();
@@ -31,6 +33,20 @@ function App() {
     direct: false,
   });
 
+  const { execute } = useContractFunction<BigNumber>({
+    abi: ERC20,
+    address: "0xa9d19d5e8712C1899C4344059FD2D873a3e2697E",
+    method: "balanceOf",
+    onSuccess: (res) => {
+      console.log(res); // res will be BigNumber
+    },
+    args: [address],
+  });
+
+  const { balance: ercBalance } = useERC20Balance({
+    address: "0xa9d19d5e8712C1899C4344059FD2D873a3e2697E",
+  });
+
   return (
     <div>
       asfafs
@@ -49,6 +65,7 @@ function App() {
       </button>
       <button onClick={switchTo}>Switch to correct network</button>
       <button onClick={fetchBalance}>Fetchbalance</button>
+      <button onClick={async () => await execute()}>Execute function</button>
     </div>
   );
 }

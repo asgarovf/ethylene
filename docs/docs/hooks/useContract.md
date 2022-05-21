@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # useContract
@@ -32,6 +32,7 @@ function App() {
         onClick={async () => {
           /* pass your arguments in respective order */
           const res = await contract?.methods.allowance.execute();
+          // We advise using optional chaining to prevent calling methods of null value.
         }}
       >
         Call a function named allowance
@@ -76,7 +77,7 @@ function App() {
 ## Typing
 
 :::tip Method autocomplete for Typescript
-You can use Typescript types to enable autocomplete for you methods. The example is given below. It will help you to see all the contract methods during the coding without being needed to check the abi again.
+You can use Typescript types to enable autocomplete for your methods. The example is given below. It will help you to see all the contract methods during the coding without being needed to check the abi again.
 
 Unfortunately, the argument types have not been implemented yet, but it is in process!
 :::
@@ -109,7 +110,6 @@ function App() {
 
 ```tsx
 type Props = {
-  /* Whether to fetch balance directly  */
   address: string;
   abi: ContractInterface; // Only JSON Interface is supported for now
   provider: Web3Provider;
