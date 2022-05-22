@@ -1,1 +1,1 @@
-{"version":3,"file":"useProvider.d.ts","sourceRoot":"","sources":["../../src/hooks/useProvider.tsx"],"names":[],"mappings":"AAEA,eAAO,MAAM,WAAW,mEAIvB,CAAC"}
+{"version":3,"file":"useProvider.d.ts","sourceRoot":"","sources":["../../src/hooks/useProvider.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,0BAA0B,CAAC;AAKxD,eAAO,MAAM,WAAW;4BAIS,YAAY;;CAK5C,CAAC"}

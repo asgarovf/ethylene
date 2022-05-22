@@ -10,4 +10,7 @@ export { useSigner } from "../hooks/useSigner";
 export { useAuth } from "../hooks/useAuth";
 export { useContractFunction } from "../hooks/useContractFunction";
 export { useContractEvent } from "../hooks/useContractEvent";
+export { useBlockNumber } from "../hooks/useBlockNumber";
+export { useBlock } from "../hooks/useBlock";
+export { useBlockTimestamp } from "../hooks/useBlockTimestamp";
 //# sourceMappingURL=index.d.ts.map

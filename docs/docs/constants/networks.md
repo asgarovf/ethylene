@@ -17,6 +17,58 @@ type EthyleneNetwork = {
 };
 ```
 
+## ETHEREUM MAINNET
+
+```tsx
+import { ETHEREUM_MAINNET } from "ethylene/constants";
+
+function App() {
+
+  return (
+    ...
+  );
+}
+```
+
+## RINKEBY
+
+```tsx
+import { RINKEBY } from "ethylene/constants";
+
+function App() {
+
+  return (
+    ...
+  );
+}
+```
+
+## BSC MAINNET
+
+```tsx
+import { BSC_MAINNET } from "ethylene/constants";
+
+function App() {
+
+  return (
+    ...
+  );
+}
+```
+
+## BSC TESTNET
+
+```tsx
+import { BSC_TESTNET } from "ethylene/constants";
+
+function App() {
+
+  return (
+    ...
+  );
+}
+```
+
 ## AVAX MAINNET
 
 ```tsx

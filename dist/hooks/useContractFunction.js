@@ -36,13 +36,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 import { Contract } from "ethers";
 import { useState } from "react";
+import { useTypedSelector } from "../store";
 import { isProd } from "../utils/isProd";
-import { useProvider } from "./useProvider";
 export var useContractFunction = function (_a) {
     var address = _a.address, abi = _a.abi, method = _a.method, _b = _a.args, args = _b === void 0 ? [] : _b, _c = _a.connectSigner, connectSigner = _c === void 0 ? true : _c, onError = _a.onError, onSuccess = _a.onSuccess;
     var _d = useState(false), isLoading = _d[0], setIsLoading = _d[1];
     var _e = useState(false), isFailed = _e[0], setIsFailed = _e[1];
-    var provider = useProvider();
+    var provider = useTypedSelector(function (state) { return state.account.provider; });
     var execute = function (wait) { return __awaiter(void 0, void 0, void 0, function () {
         var signer, contract, res, txn, err_1;
         var _a;
