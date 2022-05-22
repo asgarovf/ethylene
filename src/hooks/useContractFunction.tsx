@@ -1,8 +1,8 @@
 import { JsonRpcSigner } from "@ethersproject/providers";
 import { Contract, ContractInterface } from "ethers";
 import { useState } from "react";
+import { useTypedSelector } from "../store";
 import { isProd } from "../utils/isProd";
-import { useProvider } from "./useProvider";
 
 export const useContractFunction = <T,>({
   address,
@@ -23,7 +23,7 @@ export const useContractFunction = <T,>({
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isFailed, setIsFailed] = useState(false);
-  const provider = useProvider();
+  const provider = useTypedSelector((state) => state.account.provider);
 
   const execute = async (wait?: boolean) => {
     if (!provider && connectSigner) {

@@ -14,7 +14,7 @@ import { useProvider } from "ethylene/hooks";
 function App() {
 
   // highlight-next-line
-  const provider = useProvider();
+  const { provider, setProvider} = useProvider();
 
   return (
     ...
@@ -25,5 +25,8 @@ function App() {
 ## API
 
 ```tsx
-type ReturnType = Web3Provider | undefined;
+type ReturnType = {
+  provider: Web3Provider | undefined;
+  setProvider: (to: Web3Provider) => void;
+};
 ```

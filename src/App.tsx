@@ -11,6 +11,7 @@ import {
   useBalance,
   useContractFunction,
   useContractEvent,
+  useBlockNumber,
 } from "./hooks";
 import { useERC20Balance } from "./hooks/useERC20Balance";
 
@@ -44,12 +45,19 @@ function App() {
     args: [address],
   });
 
-  useContractEvent("locked", {
+  /* useContractEvent("Locked", {
     abi: ERC20,
     address: "0xa9d19d5e8712C1899C4344059FD2D873a3e2697E",
     callback: (res) => {
       console.log(res); // res will be BigNumber
     },
+  }); */
+
+  const { fetchBlockNumber, blockNumber } = useBlockNumber({
+    onSuccess: (num) => {
+      console.log(num);
+    },
+    direct: false,
   });
 
   const { balance: ercBalance } = useERC20Balance({
@@ -75,6 +83,9 @@ function App() {
       <button onClick={switchTo}>Switch to correct network</button>
       <button onClick={fetchBalance}>Fetchbalance</button>
       <button onClick={async () => await execute()}>Execute function</button>
+      <button onClick={async () => await fetchBlockNumber()}>
+        Get block number
+      </button>
     </div>
   );
 }
