@@ -8,6 +8,8 @@ sidebar_position: 1
 
 - [NPM Package](https://www.npmjs.com/package/ethylene)
 
+![img](../static/img/logo-small.png)
+
 ## Getting Started
 
 Install the package from [npm](https://www.npmjs.com/package/ethylene).

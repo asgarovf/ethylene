@@ -10,6 +10,7 @@ import {
   useOnAccountsChange,
   useBalance,
   useContractFunction,
+  useContractEvent,
 } from "./hooks";
 import { useERC20Balance } from "./hooks/useERC20Balance";
 
@@ -41,6 +42,14 @@ function App() {
       console.log(res); // res will be BigNumber
     },
     args: [address],
+  });
+
+  useContractEvent("locked", {
+    abi: ERC20,
+    address: "0xa9d19d5e8712C1899C4344059FD2D873a3e2697E",
+    callback: (res) => {
+      console.log(res); // res will be BigNumber
+    },
   });
 
   const { balance: ercBalance } = useERC20Balance({
