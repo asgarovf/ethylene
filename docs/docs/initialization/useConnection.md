@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## Connect your wallet
 
-The `connect` function handles all the wallet connection handling.
+The `connect` function handles all the wallet connection process.
 
 ```tsx
 import { useConnection } from "ethylene/hooks";
