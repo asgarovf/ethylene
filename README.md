@@ -22,6 +22,8 @@ You can type this command into Command Prompt, Powershell, Terminal, or any othe
 
 [https://ethylene.vercel.app/docs/intro](https://ethylene.vercel.app/docs/intro)
 
+![img](https://ethylene.vercel.app/assets/images/logo-small-f20eb3221a5295ac725aa34450e72886.png)
+
 ## Version Note
 
-We are not supporting the new React 18 release. It is recommended to use previous major React versions.
+Although we support the new React 18 release, it is recommended to use previous major React versions.
