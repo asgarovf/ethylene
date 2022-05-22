@@ -9,4 +9,5 @@ export { useProvider } from "../hooks/useProvider";
 export { useSigner } from "../hooks/useSigner";
 export { useAuth } from "../hooks/useAuth";
 export { useContractFunction } from "../hooks/useContractFunction";
+export { useContractEvent } from "../hooks/useContractEvent";
 //# sourceMappingURL=index.d.ts.map
