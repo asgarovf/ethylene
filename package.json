@@ -1,6 +1,6 @@
 {
   "name": "ethylene",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "private": false,
   "license": "MIT",
   "author": {
@@ -29,7 +29,8 @@
     "clean": "rm -rf dist",
     "build": "npm run clean && tsc --p tsconfig-build.json && cp package.json ./dist && cp README.md ./dist",
     "tsc": "npm run clean && tsc -p .",
-    "share": "npm run build && npm publish ./dist"
+    "share": "npm run build && npm publish ./dist",
+    "share-prev": "npm run build && npm publish ./dist --tag prev"
   },
   "eslintConfig": {
     "extends": [
@@ -45,7 +46,7 @@
     ],
     "development": [
       "last 1 chrome version",
-      "last 1 firefox version",
+      "last 1 firefox version",cd
       "last 1 safari version"
     ]
   },
