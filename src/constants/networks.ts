@@ -69,3 +69,17 @@ export const BSC_TESTNET: EthyleneNetwork = {
     symbol: "tBNB",
   },
 };
+
+export const POLYGON_MAINNET: EthyleneNetwork = {
+  chainId: "0x89",
+  name: "Polygon",
+  rpcUrls: ["https://polygon-rpc.com"],
+  nativeCurrency: { name: "Matic", decimals: 18, symbol: "MATIC" },
+};
+
+export const MUMBAI_MAINNET: EthyleneNetwork = {
+  chainId: "0x13881",
+  name: "Mumbai",
+  rpcUrls: ["https://mumbai.polygonscan.com"],
+  nativeCurrency: { name: "Matic", decimals: 18, symbol: "MATIC" },
+};
