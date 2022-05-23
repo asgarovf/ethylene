@@ -30,4 +30,4 @@ You can type this command into Command Prompt, Powershell, Terminal, or any othe
 
 ## Version Note
 
-Although we support the new React 17 release, it is gives an error during the installation. You can use `npm install ethylene@prev` flag to install it for previous React releases.
+Although we support the new React 17 release, it is gives an error during the installation. You can use `npm install ethylene@prev`to install it for previous React releases.
