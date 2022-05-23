@@ -86,7 +86,7 @@ const config = {
             ],
           },
           {
-            title: "Community",
+            title: "Community & Dev",
             items: [
               {
                 label: "Stack Overflow",
@@ -95,6 +95,10 @@ const config = {
               {
                 label: "Twitter",
                 href: "https://twitter.com/asgarovf",
+              },
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/in/asgarovf/",
               },
             ],
           },
