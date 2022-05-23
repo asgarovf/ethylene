@@ -11,8 +11,8 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <h1 className={styles.hero__title}>{siteConfig.title}</h1>
+        <p className={styles.hero__subtitle}>{siteConfig.tagline}</p>
       </div>
     </header>
   );
@@ -41,8 +41,8 @@ export default function Home() {
           <Link to="/docs/intro">
             <h2>Documentation</h2>
           </Link>
-          <div style={{ marginTop: "2rem" }}>
-            <h4>
+          <div style={{ marginTop: "2rem", marginBottom: "2rem" }}>
+            <h4 style={{ textAlign: "center" }}>
               The documentation and the library is still experimental. The full
               publish will be announced!
             </h4>{" "}

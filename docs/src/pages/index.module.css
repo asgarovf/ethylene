@@ -21,3 +21,13 @@
   align-items: center;
   justify-content: center;
 }
+
+
+.hero__title{
+  color:white;
+  font-size: 48px;
+}
+
+.hero__subtitle{
+  color:white;
+}
