@@ -35,6 +35,8 @@ Although we support the new React 17 release, it is gives an error during the in
 
 <hr/>
 
-## Powered by [ITU Blockchain](https://itublockchain.com) Team
+## Powered by [ITU Blockchain](https://itublockchain.com)
 
 ![img](./public/itublockchain.png)
+
+<hr/>
