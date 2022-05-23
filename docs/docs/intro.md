@@ -21,4 +21,5 @@ npm i ethylene
 You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
 
 :::info React version
-Although we support the new React 18 release, it is recommended to use previous major React versions.
+Although we support the new React 17 release, it is gives an error during the installation. You can use `--legacy-peer-deps` flag to install it for previous React releases.
+:::
