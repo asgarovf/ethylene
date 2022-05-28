@@ -8,6 +8,7 @@ React hooks, utils, and UI components for interacting with Ethereum Smart Contra
 
 **Ethylene** is a React library that is built for supporting Web3 front-end developers. You can start your work in short amount of time and develop your complete dApp without any difficulties.
 
+
 ## Getting Started
 
 Install the package from [npm](https://www.npmjs.com/package/ethylene).
@@ -31,3 +32,11 @@ You can type this command into Command Prompt, Powershell, Terminal, or any othe
 ## Version Note
 
 Although we support the new React 17 release, it is gives an error during the installation. You can use `npm install ethylene@prev`to install it for previous React releases.
+
+<hr/>
+
+## Powered by [ITU Blockchain](https://itublockchain.com)
+
+![img](./public/itublockchain.png)
+
+<hr/>

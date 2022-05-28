@@ -62,3 +62,15 @@ export var BSC_TESTNET = {
         symbol: "tBNB",
     },
 };
+export var POLYGON_MAINNET = {
+    chainId: "0x89",
+    name: "Polygon",
+    rpcUrls: ["https://polygon-rpc.com"],
+    nativeCurrency: { name: "Matic", decimals: 18, symbol: "MATIC" },
+};
+export var MUMBAI_MAINNET = {
+    chainId: "0x13881",
+    name: "Mumbai",
+    rpcUrls: ["https://mumbai.polygonscan.com"],
+    nativeCurrency: { name: "Matic", decimals: 18, symbol: "MATIC" },
+};
