@@ -1,6 +1,6 @@
 {
   "name": "ethylene",
-  "version": "1.2.12-prev",
+  "version": "1.2.13",
   "private": false,
   "license": "MIT",
   "author": {
@@ -51,7 +51,7 @@
     ]
   },
   "peerDependencies": {
-    "react": "^18"
+    "react": "^17 || ^18"
   },
   "devDependencies": {
     "@types/node": "16.11.33",
