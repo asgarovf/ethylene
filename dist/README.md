@@ -16,12 +16,6 @@ Install the package from [npm](https://www.npmjs.com/package/ethylene).
 npm i ethylene
 ```
 
-For older React version:
-
-```bash
-npm i ethylene@prev
-```
-
 You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
 
 ## Documentation
