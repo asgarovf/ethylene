@@ -41,10 +41,12 @@ export const useConnection = ({
       return;
     }
 
-    const appliedProvider = mainConnector.provider;
-    const provider = new ethers.providers.Web3Provider(appliedProvider, "any");
-
     try {
+      const appliedProvider = mainConnector.provider;
+      if (connector?.name === "walletconnect") {
+        appliedProvider.enable();
+      }
+      const provider = new ethers.providers.Web3Provider(appliedProvider);
       dispatch(setIsConnecting(true));
       await provider.send("eth_requestAccounts", []);
       const signer = await provider.getSigner();
@@ -56,11 +58,12 @@ export const useConnection = ({
         dispatch(setAuth(true));
         dispatch(setIsConnecting(false));
       });
-    } catch {
+    } catch (err) {
       dispatch(setIsConnecting(false));
-      const error = new Error("Failed to connect the walled");
+      const error = new Error("Failed to connect the wallet");
       onError?.(error);
       if (!isProd) {
+        console.error(err);
         console.error(error);
         throw error;
       }

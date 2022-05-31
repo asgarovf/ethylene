@@ -48,9 +48,9 @@ export var useConnection = function (_a) {
     var dispatch = useDispatch();
     var auth = useTypedSelector(function (state) { return state.account; }).auth;
     var connect = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var mainConnector, appliedProvider, provider, signer_1, address_1, _a, error;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
+        var mainConnector, appliedProvider, provider_1, signer_1, address_1, err_1, error;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
                 case 0:
                     if (auth)
                         return [2 /*return*/];
@@ -59,35 +59,39 @@ export var useConnection = function (_a) {
                         onMetamaskError === null || onMetamaskError === void 0 ? void 0 : onMetamaskError();
                         return [2 /*return*/];
                     }
-                    appliedProvider = mainConnector.provider;
-                    provider = new ethers.providers.Web3Provider(appliedProvider, "any");
-                    _b.label = 1;
+                    _a.label = 1;
                 case 1:
-                    _b.trys.push([1, 5, , 6]);
+                    _a.trys.push([1, 5, , 6]);
+                    appliedProvider = mainConnector.provider;
+                    if ((connector === null || connector === void 0 ? void 0 : connector.name) === "walletconnect") {
+                        appliedProvider.enable();
+                    }
+                    provider_1 = new ethers.providers.Web3Provider(appliedProvider);
                     dispatch(setIsConnecting(true));
-                    return [4 /*yield*/, provider.send("eth_requestAccounts", [])];
+                    return [4 /*yield*/, provider_1.send("eth_requestAccounts", [])];
                 case 2:
-                    _b.sent();
-                    return [4 /*yield*/, provider.getSigner()];
+                    _a.sent();
+                    return [4 /*yield*/, provider_1.getSigner()];
                 case 3:
-                    signer_1 = _b.sent();
+                    signer_1 = _a.sent();
                     return [4 /*yield*/, signer_1.getAddress()];
                 case 4:
-                    address_1 = _b.sent();
+                    address_1 = _a.sent();
                     batch(function () {
                         dispatch(setSigner(signer_1));
-                        dispatch(setProvider(provider));
+                        dispatch(setProvider(provider_1));
                         dispatch(setAddress(address_1));
                         dispatch(setAuth(true));
                         dispatch(setIsConnecting(false));
                     });
                     return [3 /*break*/, 6];
                 case 5:
-                    _a = _b.sent();
+                    err_1 = _a.sent();
                     dispatch(setIsConnecting(false));
-                    error = new Error("Failed to connect the walled");
+                    error = new Error("Failed to connect the wallet");
                     onError === null || onError === void 0 ? void 0 : onError(error);
                     if (!isProd) {
+                        console.error(err_1);
                         console.error(error);
                         throw error;
                     }

@@ -14,9 +14,15 @@ import {
   useBlockNumber,
 } from "./hooks";
 import { useERC20Balance } from "./hooks/useERC20Balance";
+import {
+  EthyleneInjectedConnector,
+  EthyleneWalletConnectConnector,
+} from "./utils/connectors";
 
 function App() {
-  const { connect, disconnect } = useConnection();
+  const { connect, disconnect } = useConnection({
+    connector: EthyleneWalletConnectConnector,
+  });
   const { auth, provider, address } = useAccount();
   const contract = useContract({
     address: "0xa9d19d5e8712C1899C4344059FD2D873a3e2697E",

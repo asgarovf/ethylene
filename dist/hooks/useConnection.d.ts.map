@@ -1,1 +1,1 @@
-{"version":3,"file":"useConnection.d.ts","sourceRoot":"","sources":["../../src/hooks/useConnection.tsx"],"names":[],"mappings":"AAUA,OAAO,EAAE,iBAAiB,EAAE,MAAM,cAAc,CAAC;AAQjD,eAAO,MAAM,aAAa;;qBAMR,KAAK,KAAK,IAAI;6BACN,IAAI;;;;;;;CAwD7B,CAAC"}
+{"version":3,"file":"useConnection.d.ts","sourceRoot":"","sources":["../../src/hooks/useConnection.tsx"],"names":[],"mappings":"AAUA,OAAO,EAAE,iBAAiB,EAAE,MAAM,cAAc,CAAC;AAQjD,eAAO,MAAM,aAAa;;qBAMR,KAAK,KAAK,IAAI;6BACN,IAAI;;;;;;;CA2D7B,CAAC"}
