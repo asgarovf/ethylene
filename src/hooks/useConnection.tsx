@@ -12,7 +12,6 @@ import { EthyleneConnector } from "../types/app";
 import { EthyleneInjectedConnector } from "../utils/connectors";
 import { isProd } from "../utils/isProd";
 import { ethers } from "ethers";
-import { useEffect } from "react";
 
 const defaultConnector = EthyleneInjectedConnector;
 

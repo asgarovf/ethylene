@@ -1,4 +1,5 @@
 import { BigNumber } from "ethers";
+import { useEffect } from "react";
 import { ERC20 } from "./abi/ERC20";
 import { AVAX_MAINNET } from "./constants";
 import {
@@ -12,6 +13,7 @@ import {
   useContractFunction,
   useContractEvent,
   useBlockNumber,
+  useRequest,
 } from "./hooks";
 import { useERC20Balance } from "./hooks/useERC20Balance";
 
@@ -63,6 +65,20 @@ function App() {
   const { balance: ercBalance } = useERC20Balance({
     address: "0xa9d19d5e8712C1899C4344059FD2D873a3e2697E",
   });
+
+  const fetchReq = (hello: string) => fetch(`https://randomuse${hello}`);
+
+  const request = useRequest<Response, Parameters<typeof fetchReq>>(
+    (hello: string) => fetchReq(hello),
+    {
+      onSuccess: (res) => {},
+      onFail: (err) => {},
+    }
+  );
+
+  useEffect(() => {
+    request.execute("string");
+  }, []);
 
   return (
     <div>

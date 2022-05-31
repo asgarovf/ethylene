@@ -13,3 +13,4 @@ export { useContractEvent } from "../hooks/useContractEvent";
 export { useBlockNumber } from "../hooks/useBlockNumber";
 export { useBlock } from "../hooks/useBlock";
 export { useBlockTimestamp } from "../hooks/useBlockTimestamp";
+export { useRequest } from "../hooks/useRequest";
