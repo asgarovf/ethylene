@@ -10,7 +10,7 @@ export declare const useContractFunction: <T>({ address, abi, method, args, conn
 }) => {
     isLoading: boolean;
     isFailed: boolean;
-    execute: (wait?: boolean) => Promise<void>;
+    execute: (wait?: boolean | undefined) => Promise<void>;
     executeAndWait: () => void;
 };
 //# sourceMappingURL=useContractFunction.d.ts.map
