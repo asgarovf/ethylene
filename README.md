@@ -16,21 +16,11 @@ Install the package from [npm](https://www.npmjs.com/package/ethylene).
 npm i ethylene
 ```
 
-For older React version:
-
-```bash
-npm i ethylene@prev
-```
-
 You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
 
 ## Documentation
 
 [https://ethylene.itublockchain.com/docs/intro](https://ethylene.itublockchain.com/docs/intro)
-
-## Version Note
-
-Although we support the new React 17 release, it is gives an error during the installation. You can use `npm install ethylene@prev`to install it for previous React releases.
 
 <hr/>
 
