@@ -10,8 +10,8 @@ import {
   useOnAccountsChange,
   useBalance,
   useContractFunction,
-  useContractEvent,
   useBlockNumber,
+  useERC20Contract,
 } from "./hooks";
 import { useERC20Balance } from "./hooks/useERC20Balance";
 
@@ -64,6 +64,10 @@ function App() {
     address: "0xa9d19d5e8712C1899C4344059FD2D873a3e2697E",
   });
 
+  const testContract = useERC20Contract({
+    address: "0xa9d19d5e8712C1899C4344059FD2D873a3e2697E",
+  });
+
   return (
     <div>
       asfafs
@@ -86,7 +90,14 @@ function App() {
       <button onClick={async () => await fetchBlockNumber()}>
         Get block number
       </button>
-      <button onClick={async () => await fn()}>test</button>
+      <button
+        onClick={async () => {
+          const res = await testContract?.methods.balanceOf.execute(address);
+          console.log(res);
+        }}
+      >
+        Test useERC20Contract
+      </button>
     </div>
   );
 }
