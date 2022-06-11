@@ -29,7 +29,10 @@ export const useERC20Balance = ({
     onError: (err) => {
       setError(err);
     },
-    onSuccess: onSuccess,
+    onSuccess: (res) => {
+      onSuccess?.(res);
+      setBalance(res);
+    },
     args: [userAddress],
   });
 

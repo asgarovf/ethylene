@@ -14,3 +14,4 @@ export { useBlockNumber } from "../hooks/useBlockNumber";
 export { useBlock } from "../hooks/useBlock";
 export { useBlockTimestamp } from "../hooks/useBlockTimestamp";
 export { useERC20Contract } from "../hooks/useERC20Contract";
+export { useERC20Balance } from "../hooks/useERC20Balance";
