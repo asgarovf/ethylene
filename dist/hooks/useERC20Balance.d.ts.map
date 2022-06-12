@@ -1,1 +1,1 @@
-{"version":3,"file":"useERC20Balance.d.ts","sourceRoot":"","sources":["../../src/hooks/useERC20Balance.tsx"],"names":[],"mappings":";AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,QAAQ,CAAC;AAMnC,eAAO,MAAM,eAAe;aAMjB,MAAM;;;2BAGO,SAAS,KAAK,IAAI;;;;;;;CAkCzC,CAAC"}
+{"version":3,"file":"useERC20Balance.d.ts","sourceRoot":"","sources":["../../src/hooks/useERC20Balance.tsx"],"names":[],"mappings":";AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,QAAQ,CAAC;AAMnC,eAAO,MAAM,eAAe;aAMjB,MAAM;;;2BAGO,SAAS,KAAK,IAAI;;;;;;;CAqCzC,CAAC"}

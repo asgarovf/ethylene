@@ -131,7 +131,7 @@ export var useContract = function (_a) {
                                     return [4 /*yield*/, res.wait()];
                                 case 3:
                                     txn = _b.sent();
-                                    dispatchLoading({ type: key, payload: true });
+                                    dispatchLoading({ type: key, payload: false });
                                     return [2 /*return*/, txn];
                                 case 4:
                                     err_2 = _b.sent();
