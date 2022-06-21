@@ -5,4 +5,5 @@ export { RINKEBY } from "./networks";
 export { BSC_MAINNET } from "./networks";
 export { BSC_TESTNET } from "./networks";
 export { isProd as IS_PROD } from "../utils/isProd";
-export { ERC20 } from "./abi";
+export { ERC20 } from "../abi/ERC20";
+export { ERC721 } from "../abi/ERC721";

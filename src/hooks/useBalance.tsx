@@ -2,7 +2,7 @@ import { BigNumber } from "ethers";
 import { useEffect, useState } from "react";
 import { useTypedSelector } from "../store";
 
-export const useBalance = ({ direct = true }: { direct: boolean }) => {
+export const useBalance = ({ direct = true }: { direct?: boolean }) => {
   const [balance, setBalance] = useState<BigNumber>(BigNumber.from(0));
   const { provider, address } = useTypedSelector((state) => state.account);
   const [isFetching, setIsFetching] = useState(false);
