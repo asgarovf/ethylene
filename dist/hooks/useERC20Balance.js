@@ -25,7 +25,10 @@ export var useERC20Balance = function (_a) {
         onError: function (err) {
             setError(err);
         },
-        onSuccess: onSuccess,
+        onSuccess: function (res) {
+            onSuccess === null || onSuccess === void 0 ? void 0 : onSuccess(res);
+            setBalance(res);
+        },
         args: [userAddress],
     }), execute = _g.execute, isLoading = _g.isLoading;
     useEffect(function () {

@@ -63,7 +63,7 @@ export const useContract = <T extends string>({
               .connect(signer)
               [key](...args);
             const txn = await res.wait();
-            dispatchLoading({ type: key, payload: true });
+            dispatchLoading({ type: key, payload: false });
             return txn;
           } catch (err) {
             if (!isProd) {

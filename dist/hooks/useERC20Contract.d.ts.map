@@ -1,0 +1,1 @@
+{"version":3,"file":"useERC20Contract.d.ts","sourceRoot":"","sources":["../../src/hooks/useERC20Contract.tsx"],"names":[],"mappings":"AAIA,aAAK,oBAAoB,GACrB,MAAM,GACN,SAAS,GACT,aAAa,GACb,cAAc,GACd,UAAU,GACV,WAAW,GACX,QAAQ,GACR,UAAU,GACV,WAAW,CAAC;AAEhB,eAAO,MAAM,gBAAgB;aAA4B,MAAM;sEAU9D,CAAC"}
