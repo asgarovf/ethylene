@@ -31,6 +31,7 @@ function App() {
     deps: [],
     interval: 1000,
   });
+
   const { balance, fetchBalance, isFetching, setBalance, error } = useBalance({
     direct: false,
   });
@@ -47,6 +48,7 @@ function App() {
 
   const fn = async () => {
     if (!provider || !signer) return;
+
     const contract = new Contract(
       "0xFeDFAF1A10335448b7FA0268F56D2B44DBD357de",
       [
@@ -54,6 +56,7 @@ function App() {
       ],
       provider
     );
+    
     contract
       .connect(signer)
       .claim(
